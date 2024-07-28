@@ -3,16 +3,16 @@ const moment = require('moment-timezone');
 const { baileys, boom, chalk, fs, figlet, FileType, path, pino, process, PhoneNumber, axios, yargs, _ } = modul;
 const { Boom } = boom
 const {
-	default: XeonBotIncConnect,
-	BufferJSON,
-	initInMemoryKeyStore,
-	DisconnectReason,
-	AnyMessageContent,
+  default: XeonBotIncConnect,
+  BufferJSON,
+  initInMemoryKeyStore,
+  DisconnectReason,
+  AnyMessageContent,
         makeInMemoryStore,
-	useMultiFileAuthState,
-	delay,
-	fetchLatestBaileysVersion,
-	generateForwardMessageContent,
+  useMultiFileAuthState,
+  delay,
+  fetchLatestBaileysVersion,
+  generateForwardMessageContent,
     prepareWAMessageMedia,
     generateWAMessageFromContent,
     generateMessageID,
@@ -52,8 +52,8 @@ require('./index.js')
 nocache('../index.js', module => console.log(color('[ CHANGE ]', 'green'), color(`'${module}'`, 'green'), 'Updated'))
 
 async function XeonBotIncBot() {
-	const {  saveCreds, state } = await useMultiFileAuthState(`./${sessionName}`)
-    	const XeonBotInc = XeonBotIncConnect({
+  const {  saveCreds, state } = await useMultiFileAuthState(`./${sessionName}`)
+      const XeonBotInc = XeonBotIncConnect({
         logger: pino({ level: 'silent' }),
         printQRInTerminal: true,
         browser: [`${botname}`,'Safari','3.0'],
@@ -72,57 +72,57 @@ async function XeonBotIncBot() {
     store.bind(XeonBotInc.ev)
 
 XeonBotInc.ev.on('connection.update', async (update) => {
-	const {
-		connection,
-		lastDisconnect
-	} = update
+  const {
+    connection,
+    lastDisconnect
+  } = update
 try{
-		if (connection === 'close') {
-			let reason = new Boom(lastDisconnect?.error)?.output.statusCode
-			if (reason === DisconnectReason.badSession) {
-				console.log(`Bad Session File, Please Delete Session and Scan Again`);
-				XeonBotIncBot()
-			} else if (reason === DisconnectReason.connectionClosed) {
-				console.log("Connection closed, reconnecting....");
-				XeonBotIncBot();
-			} else if (reason === DisconnectReason.connectionLost) {
-				console.log("Connection Lost from Server, reconnecting...");
-				XeonBotIncBot();
-			} else if (reason === DisconnectReason.connectionReplaced) {
-				console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
-				XeonBotIncBot()
-			} else if (reason === DisconnectReason.loggedOut) {
-				console.log(`Device Logged Out, Please Scan Again And Run.`);
-				XeonBotIncBot();
-			} else if (reason === DisconnectReason.restartRequired) {
-				console.log("Restart Required, Restarting...");
-				XeonBotIncBot();
-			} else if (reason === DisconnectReason.timedOut) {
-				console.log("Connection TimedOut, Reconnecting...");
-				XeonBotIncBot();
-			} else XeonBotInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
-		}
-		if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
-			console.log(color(`\n🌿Connecting...`, 'yellow'))
-		}
-		if (update.connection == "open" || update.receivedPendingNotifications == "true") {
-			console.log(color(` `,'magenta'))
+    if (connection === 'close') {
+      let reason = new Boom(lastDisconnect?.error)?.output.statusCode
+      if (reason === DisconnectReason.badSession) {
+        console.log(`Bad Session File, Please Delete Session and Scan Again`);
+        XeonBotIncBot()
+      } else if (reason === DisconnectReason.connectionClosed) {
+        console.log("Connection closed, reconnecting....");
+        XeonBotIncBot();
+      } else if (reason === DisconnectReason.connectionLost) {
+        console.log("Connection Lost from Server, reconnecting...");
+        XeonBotIncBot();
+      } else if (reason === DisconnectReason.connectionReplaced) {
+        console.log("Connection Replaced, Another New Session Opened, Please Close Current Session First");
+        XeonBotIncBot()
+      } else if (reason === DisconnectReason.loggedOut) {
+        console.log(`Device Logged Out, Please Scan Again And Run.`);
+        XeonBotIncBot();
+      } else if (reason === DisconnectReason.restartRequired) {
+        console.log("Restart Required, Restarting...");
+        XeonBotIncBot();
+      } else if (reason === DisconnectReason.timedOut) {
+        console.log("Connection TimedOut, Reconnecting...");
+        XeonBotIncBot();
+      } else XeonBotInc.end(`Unknown DisconnectReason: ${reason}|${connection}`)
+    }
+    if (update.connection == "connecting" || update.receivedPendingNotifications == "false") {
+      console.log(color(`\n🌿Connecting...`, 'yellow'))
+    }
+    if (update.connection == "open" || update.receivedPendingNotifications == "true") {
+      console.log(color(` `,'magenta'))
             console.log(color(`🌿Connected to => ` + JSON.stringify(XeonBotInc.user, null, 2), 'yellow'))
-			await delay(1999)
+      await delay(1999)
             console.log(chalk.yellow(`\n\n               ${chalk.bold.blue(`[ ${botname} ]`)}\n\n`))
             console.log(color(`< ================================================== >`, 'cyan'))
-	        console.log(color(`\n${themeemoji} YT CHANNEL: Xeon`,'magenta'))
+          console.log(color(`\n${themeemoji} YT CHANNEL: Xeon`,'magenta'))
             console.log(color(`${themeemoji} GITHUB: DGXeon `,'magenta'))
             console.log(color(`${themeemoji} INSTAGRAM: @unicorn_xeon `,'magenta'))
             console.log(color(`${themeemoji} WA NUMBER: ${owner}`,'magenta'))
             console.log(color(`${themeemoji} CREDIT: ${wm}\n`,'magenta'))
-		}
-	
+    }
+
 } catch (err) {
-	  console.log('Error in Connection.update '+err)
-	  XeonBotIncBot();
-	}
-	
+    console.log('Error in Connection.update '+err)
+    XeonBotIncBot();
+  }
+
 })
 
 await delay(5555) 
@@ -162,49 +162,49 @@ require('./XeonCheems8')(XeonBotInc, m, chatUpdate, store)
 } catch (err) {
 console.log(err)}})
 
-	// detect group update
-		XeonBotInc.ev.on("groups.update", async (json) => {
-			try {
+  // detect group update
+    XeonBotInc.ev.on("groups.update", async (json) => {
+      try {
 ppgroup = await XeonBotInc.profilePictureUrl(anu.id, 'image')
 } catch (err) {
 ppgroup = 'https://i.ibb.co/RBx5SQC/avatar-group-large-v2.png?q=60'
 }
-			console.log(json)
-			const res = json[0];
-			if (res.announce == true) {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup has been closed by admin, Now only admins can send messages !`,
-				});
-			} else if (res.announce == false) {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nThe group has been opened by admin, Now participants can send messages !`,
-				});
-			} else if (res.restrict == true) {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup info has been restricted, Now only admin can edit group info !`,
-				});
-			} else if (res.restrict == false) {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\nGroup info has been opened, Now participants can edit group info !`,
-				});
-			} else if(!res.desc == ''){
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, { 
-					text: `「 Group Settings Change 」\n\n*Group description has been changed to*\n\n${res.desc}`,
-				});
+      console.log(json)
+      const res = json[0];
+      if (res.announce == true) {
+        await sleep(2000)
+        XeonBotInc.sendMessage(res.id, {
+          text: `「 Group Settings Change 」\n\nGroup has been closed by admin, Now only admins can send messages !`,
+        });
+      } else if (res.announce == false) {
+        await sleep(2000)
+        XeonBotInc.sendMessage(res.id, {
+          text: `「 Group Settings Change 」\n\nThe group has been opened by admin, Now participants can send messages !`,
+        });
+      } else if (res.restrict == true) {
+        await sleep(2000)
+        XeonBotInc.sendMessage(res.id, {
+          text: `「 Group Settings Change 」\n\nGroup info has been restricted, Now only admin can edit group info !`,
+        });
+      } else if (res.restrict == false) {
+        await sleep(2000)
+        XeonBotInc.sendMessage(res.id, {
+          text: `「 Group Settings Change 」\n\nGroup info has been opened, Now participants can edit group info !`,
+        });
+      } else if(!res.desc == ''){
+        await sleep(2000)
+        XeonBotInc.sendMessage(res.id, { 
+          text: `「 Group Settings Change 」\n\n*Group description has been changed to*\n\n${res.desc}`,
+        });
       } else {
-				await sleep(2000)
-				XeonBotInc.sendMessage(res.id, {
-					text: `「 Group Settings Change 」\n\n*Group name has been changed to*\n\n*${res.subject}*`,
-				});
-			} 
-			
-		});
-		
+        await sleep(2000)
+        XeonBotInc.sendMessage(res.id, {
+          text: `「 Group Settings Change 」\n\n*Group name has been changed to*\n\n*${res.subject}*`,
+        });
+      } 
+
+    });
+
 XeonBotInc.ev.on('group-participants.update', async (anu) => {
 console.log(anu)
 try {
@@ -229,18 +229,25 @@ XeonLft = await getBuffer(ppuser)
                 const xeonbuffer = await getBuffer(ppuser)
                 let xeonName = num
                 const xtime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-	            const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-	            const xmembers = metadata.participants.length
+              const xdate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+              const xmembers = metadata.participants.length
                 xeonbody = `┌─❖
-│「 𝗛𝗶 👋 」
-└┬❖ 「  @${xeonName.split("@")[0]}  」
-   │✑  𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 
-   │✑  ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
-   │✑ ${xmembers}th
-   │✑  𝗝𝗼𝗶𝗻𝗲𝗱 : 
-   │✑ ${xtime} ${xdate}
-   └───────────────┈ ⳹`
+│Hi @${xeonName.split("@")[0]}
+└┬❖ 
+⚠️ RULES GROUP
+1.DILARANG SPAM
+2.DILARANG TOXIC
+3.DILARANG DRAMA DIGRUP INI
+4.DILARANG MENIPU/NGERIP
+5.DILARANG SHARE / MEMBICARAKAN YANG BERBAU PORNO
+6.DILARANG SHARE LINK GRUP LAIN DISINI
+
+⛔  *REKBER ADMIN*
+silahkan hubungi admin: https://wa.me/6282119076577 ( Vika )
+Fee : DI BAWAH 10rb Seiklasnya, DIATAS 10rb 2K
+
+✅Ready Jasa CV Paypal, Binance, USDT, Crypto, WISE, Saldo Non PREM
+✅Ready Jasa OTP Nokos Semua Aplikasi`
 XeonBotInc.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
@@ -254,21 +261,73 @@ XeonBotInc.sendMessage(anu.id,
 "thumbnail": XeonWlcm,
 "sourceUrl": `${wagc}`}}})
                 } else if (anu.action == 'remove') {
-                	const xeonbuffer = await getBuffer(ppuser)
+                  const xeonbuffer = await getBuffer(ppuser)
                     const xeontime = moment.tz('Asia/Kolkata').format('HH:mm:ss')
-	                const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-                	let xeonName = num
+                  const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
+                  let xeonName = num
                     const xeonmembers = metadata.participants.length
-                    xeonbody = `┌─❖
-│「 𝗚𝗼𝗼𝗱𝗯𝘆𝗲 👋 」
-└┬❖ 「 @${xeonName.split("@")[0]}  」
-   │✑  𝗟𝗲𝗳𝘁 
-   │✑ ${metadata.subject}
-   │✑  𝗠𝗲𝗺𝗯𝗲𝗿 : 
-   │✑ ${xeonmembers}th
-   │✑  𝗧𝗶𝗺𝗲 : 
-   │✑  ${xeontime} ${xeondate}
-   └───────────────┈ ⳹`
+                    xeonbody = `📌Daftar Grup Jual Beli VIKA Rekber di facebook
+1. KYC FRESH INDONESIA
+https://www.facebook.com/groups/1248509146114981
+2. KYC & REFFERAL ONLINE INDONESIA
+https://www.facebook.com/groups/3228236904054475/
+3. Ladang Cuan Vika Rekber
+https://www.facebook.com/groups/1593994040820020
+4. JUAL BELI AKUN GITHUB AZURE,AWS,LINODE,DO,AKUN PREMIUM
+https://www.facebook.com/groups/3020000648234744/
+5. JUAL BELI PUBG MOBILE, FREE FIRE, MOBILE LEGEND
+https://www.facebook.com/groups/435227127107353/
+6. JUAL BELI AKUN MOBILE LEGENDS
+https://www.facebook.com/groups/2123647971312158/
+7. JB akun ff terpercaya dan aman
+https://www.facebook.com/groups/767875078541103/
+8. Official JB VIKA Rekber
+https://www.facebook.com/groups/743557469032161/
+9. JUAL BELI AKUN ADVANCE SERVER ML
+https://www.facebook.com/groups/3515812301875717
+10. JUAL BELI Mobile Legends Checker Unchek Monsep Nosep
+https://www.facebook.com/groups/1402302553529109/
+11. JUAL BELI NETFLIX, SPOTIFY, VIU, IQIYI, WETV, YOUTUBE PREMIUM
+https://www.facebook.com/groups/930514434968439/
+12. UP WR CLASIK DAN GB MMR RANK ML
+https://www.facebook.com/groups/483149619885693/
+13. Jasa Fake Order Shopee, Lazada, Tiktok Shop
+https://www.facebook.com/groups/292866738871037
+14. JUAL BELI AKUN COC
+https://www.facebook.com/groups/633570781249213
+15. JUAL BELI TIKTOK & INSTAGRAM
+https://www.facebook.com/groups/2369704153259506/
+16. JB Akun Youtube
+https://www.facebook.com/groups/1026881481089075/
+17. JUAL BELI INSTAGRAM
+https://www.facebook.com/groups/1158552534602769/
+18. PROJECT KYC & OTC INDONESIA
+https://www.facebook.com/groups/3627542250897748
+19. Market KYC & E-
+https://www.facebook.com/groups/729552652695932/
+20. JASA OTP NOKOS WA, TELE, EMAIL, ALL APK ONLINE
+https://www.facebook.com/groups/497435026986251
+21. BERBAGI CONFIG HTTP CUSTOM
+https://www.facebook.com/groups/1563257981135318/
+22. JUAL BELI SALDO PYPAL, DANA, OVO, GOPAY, BINANCE, CRYPTO, PULSA
+https://www.facebook.com/groups/524011327623122
+23. MARKET KYC
+https://www.facebook.com/groups/729552652695932/
+24. mARKET
+https://www.facebook.com/groups/1128938471493982/
+
+WEBSITE RESMI
+https://VikaRekber.com
+
+Link Facebook
+https://www.facebook.com/vikarekber/
+
+Grup Telegram Jual Beli Online
+https://t.me/jualbeligithub
+
+Grup Whatsapp Jual Beli Online
+https://chat.whatsapp.com/HLJWa5fWs7BBh7co9n0kqU
+`
 XeonBotInc.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
@@ -336,20 +395,20 @@ console.log(err)
     }
     XeonBotInc.ev.on('messages.update', async chatUpdate => {
         for(const { key, update } of chatUpdate) {
-			if(update.pollUpdates && key.fromMe) {
-				const pollCreation = await getMessage(key)
-				if(pollCreation) {
-				    const pollUpdate = await getAggregateVotesInPollMessage({
-							message: pollCreation,
-							pollUpdates: update.pollUpdates,
-						})
-	                var toCmd = pollUpdate.filter(v => v.voters.length !== 0)[0]?.name
-	                if (toCmd == undefined) return
+      if(update.pollUpdates && key.fromMe) {
+        const pollCreation = await getMessage(key)
+        if(pollCreation) {
+            const pollUpdate = await getAggregateVotesInPollMessage({
+              message: pollCreation,
+              pollUpdates: update.pollUpdates,
+            })
+                  var toCmd = pollUpdate.filter(v => v.voters.length !== 0)[0]?.name
+                  if (toCmd == undefined) return
                     var prefCmd = prefix+toCmd
-	                XeonBotInc.appenTextMessage(prefCmd, chatUpdate)
-				}
-			}
-		}
+                  XeonBotInc.appenTextMessage(prefCmd, chatUpdate)
+        }
+      }
+    }
     })
 
 XeonBotInc.sendTextWithMentions = async (jid, text, quoted, options = {}) => XeonBotInc.sendMessage(jid, { text: text, contextInfo: { mentionedJid: [...text.matchAll(/@(\d{0,16})/g)].map(v => v[1] + '@s.whatsapp.net') }, ...options }, { quoted })
@@ -392,14 +451,14 @@ return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map(v => v[1] + '@s.whatsapp.net'
 }
 
 XeonBotInc.sendContact = async (jid, kon, quoted = '', opts = {}) => {
-	let list = []
-	for (let i of kon) {
-	    list.push({
-	    	displayName: await XeonBotInc.getName(i),
-	    	vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await XeonBotInc.getName(i)}\nFN:${await XeonBotInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
-	    })
-	}
-	XeonBotInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
+  let list = []
+  for (let i of kon) {
+      list.push({
+        displayName: await XeonBotInc.getName(i),
+        vcard: `BEGIN:VCARD\nVERSION:3.0\nN:${await XeonBotInc.getName(i)}\nFN:${await XeonBotInc.getName(i)}\nitem1.TEL;waid=${i}:${i}\nitem1.X-ABLabel:Click here to chat\nitem2.EMAIL;type=INTERNET:${ytname}\nitem2.X-ABLabel:YouTube\nitem3.URL:${socialm}\nitem3.X-ABLabel:GitHub\nitem4.ADR:;;${location};;;;\nitem4.X-ABLabel:Region\nEND:VCARD`
+      })
+  }
+  XeonBotInc.sendMessage(jid, { contacts: { displayName: `${list.length} Contact`, contacts: list }, ...opts }, { quoted })
     }
 
 XeonBotInc.setStatus = (status) => {
@@ -717,7 +776,7 @@ XeonBotInc.sendFileUrl = async (jid, url, caption, quoted, options = {}) => {
      return XeonBotInc.sendMessage(jid, { audio: await getBuffer(url), caption: caption, mimetype: 'audio/mpeg', ...options}, { quoted: quoted, ...options })
       }
       }
-      
+
       /**
      * 
      * @param {*} jid 
