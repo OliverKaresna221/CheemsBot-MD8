@@ -247,7 +247,9 @@ silahkan hubungi admin: https://wa.me/6282119076577 ( Vika )
 Fee : DI BAWAH 10rb Seiklasnya, DIATAS 10rb 2K
 
 ✅Ready Jasa CV Paypal, Binance, USDT, Crypto, WISE, Saldo Non PREM
-✅Ready Jasa OTP Nokos Semua Aplikasi`
+✅ JUAL Nomor OTP smua aplikasi/web dalam dan luar negeri
+✅ Jasa Bayar Belanja Luar Negeri / Transfer 
+✅ Topup Saldo Dalam/Luar Negeri`
 XeonBotInc.sendMessage(anu.id,
  { text: xeonbody,
  contextInfo:{
@@ -266,57 +268,72 @@ XeonBotInc.sendMessage(anu.id,
                   const xeondate = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                   let xeonName = num
                     const xeonmembers = metadata.participants.length
-                    xeonbody = `📌Daftar Grup Jual Beli VIKA Rekber di facebook
-1. KYC FRESH INDONESIA
-https://www.facebook.com/groups/1248509146114981
-2. KYC & REFFERAL ONLINE INDONESIA
-https://www.facebook.com/groups/3228236904054475/
-3. Ladang Cuan Vika Rekber
-https://www.facebook.com/groups/1593994040820020
-4. JUAL BELI AKUN GITHUB AZURE,AWS,LINODE,DO,AKUN PREMIUM
-https://www.facebook.com/groups/3020000648234744/
-5. JUAL BELI PUBG MOBILE, FREE FIRE, MOBILE LEGEND
-https://www.facebook.com/groups/435227127107353/
-6. JUAL BELI AKUN MOBILE LEGENDS
-https://www.facebook.com/groups/2123647971312158/
-7. JB akun ff terpercaya dan aman
-https://www.facebook.com/groups/767875078541103/
-8. Official JB VIKA Rekber
-https://www.facebook.com/groups/743557469032161/
-9. JUAL BELI AKUN ADVANCE SERVER ML
-https://www.facebook.com/groups/3515812301875717
-10. JUAL BELI Mobile Legends Checker Unchek Monsep Nosep
-https://www.facebook.com/groups/1402302553529109/
-11. JUAL BELI NETFLIX, SPOTIFY, VIU, IQIYI, WETV, YOUTUBE PREMIUM
-https://www.facebook.com/groups/930514434968439/
-12. UP WR CLASIK DAN GB MMR RANK ML
-https://www.facebook.com/groups/483149619885693/
-13. Jasa Fake Order Shopee, Lazada, Tiktok Shop
-https://www.facebook.com/groups/292866738871037
-14. JUAL BELI AKUN COC
-https://www.facebook.com/groups/633570781249213
-15. JUAL BELI TIKTOK & INSTAGRAM
-https://www.facebook.com/groups/2369704153259506/
-16. JB Akun Youtube
-https://www.facebook.com/groups/1026881481089075/
-17. JUAL BELI INSTAGRAM
+                    xeonbody = `📌Daftar Grup Jual Beli VIKA Rekber di FB/WA/TELE
+JASA OTP ALL APLIKASI 
+https://www.facebook.com/groups/1593994040820020/
+
+OTP WA, TELEGRAM, GMAIL, OUTLOOK
 https://www.facebook.com/groups/1158552534602769/
-18. PROJECT KYC & OTC INDONESIA
-https://www.facebook.com/groups/3627542250897748
-19. Market KYC & E-
-https://www.facebook.com/groups/729552652695932/
-20. JASA OTP NOKOS WA, TELE, EMAIL, ALL APK ONLINE
+
+KYC & REFFERAL ONLINE INDONESIA 
+https://www.facebook.com/groups/3228236904054475/
+
+UP WR CLASIK DAN GB MMR RANK ML
+https://www.facebook.com/groups/483149619885693/
+
+JASA OTP NOKOS WA, TELE, EMAIL, ALL APK ONLINE 
 https://www.facebook.com/groups/497435026986251
-21. BERBAGI CONFIG HTTP CUSTOM
-https://www.facebook.com/groups/1563257981135318/
-22. JUAL BELI SALDO PYPAL, DANA, OVO, GOPAY, BINANCE, CRYPTO, PULSA
-https://www.facebook.com/groups/524011327623122
-23. MARKET KYC
-https://www.facebook.com/groups/729552652695932/
-24. mARKET
+
+JUAL BELI AKUN MOBILE LEGENDS 
+https://www.facebook.com/groups/2123647971312158/
+
+JUAL BELI Mobile Legends Checker Unchek Monsep Nosep
+https://www.facebook.com/groups/1402302553529109/
+
+JUAL BELI TIKTOK & INSTAGRAM 
+https://www.facebook.com/groups/2369704153259506/
+
+JUAL BELI AKUN ADVANCE SERVER ML 
+https://www.facebook.com/groups/3515812301875717/
+
+AIRDROP INDONESIA
+https://www.facebook.com/groups/836880034131545/
+
+PROJECT KYC & OTC INDONESIA 2 
 https://www.facebook.com/groups/1128938471493982/
 
-WEBSITE RESMI
+KYC FRESH INDONESIA 
+https://www.facebook.com/groups/1248509146114981/
+
+BERBAGI CONFIG HTTP CUSTOM
+https://www.facebook.com/groups/1563257981135318/
+
+JUAL BELI NETFLIX, SPOTIFY, VIU, IQIYI, WETV, YOUTUBE PREMIUM
+https://www.facebook.com/groups/930514434968439/
+
+KYC INDO 
+https://www.facebook.com/groups/729552652695932/
+
+Jasa Fake Order Shopee, Lazada, Tiktok Shop
+https://www.facebook.com/groups/292866738871037/
+
+JUAL BELI AKUN GITHUB AZURE,AWS,LINODE,DO,AKUN PREMIUM 
+https://www.facebook.com/groups/3020000648234744/
+
+JUAL BELI GMAIL, OUTLOOK & OTP SMS / CALL 
+https://www.facebook.com/groups/1178016160301852/
+
+GRUP JUAL BELI AKUN FREE FIRE / FF 
+https://www.facebook.com/groups/767875078541103/
+
+
+AIRDROP CRYPTO - GIVEAWAY & FREE TOKEN 🇮🇩
+https://www.facebook.com/groups/1738064343172760/
+
+VIKA REKBER OFFICIAL JB
+https://www.facebook.com/groups/743557469032161/
+
+WEBSITE RESMI VIKA REKBER 
 https://VikaRekber.com
 
 Link Facebook
@@ -327,6 +344,7 @@ https://t.me/jualbeligithub
 
 Grup Whatsapp Jual Beli Online
 https://chat.whatsapp.com/HLJWa5fWs7BBh7co9n0kqU
+
 `
 XeonBotInc.sendMessage(anu.id,
  { text: xeonbody,
